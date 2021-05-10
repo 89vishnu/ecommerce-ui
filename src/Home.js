@@ -874,56 +874,56 @@ class Home extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    {/*<div>*/}
-                                    {/*    <div className="slider-banner p-center slide-banner-1">*/}
-                                    {/*        <div className="slider-img">*/}
-                                    {/*            <ul className="layout1-slide-2">*/}
-                                    {/*                <li id="img-3" className="slide-center"><img*/}
-                                    {/*                    src="assets/images/layout-2/slider/2.1.png"*/}
-                                    {/*                    className="img-fluid" alt="slider"/></li>*/}
-                                    {/*                <li id="img-4" className="slide-center"><img*/}
-                                    {/*                    src="assets/images/layout-2/slider/2.2.png"*/}
-                                    {/*                    className="img-fluid" alt="slider"/></li>*/}
-                                    {/*            </ul>*/}
-                                    {/*        </div>*/}
-                                    {/*        <div className="slider-banner-contain">*/}
-                                    {/*            <div>*/}
-                                    {/*                <h1>big<span>Sale</span></h1>*/}
-                                    {/*                <h4>now start at $99</h4>*/}
-                                    {/*                <h2>50% off</h2>*/}
-                                    {/*                <a href="html/product-page(left-sidebar).html"*/}
-                                    {/*                   className="btn btn-normal">*/}
-                                    {/*                    Shop Now*/}
-                                    {/*                </a>*/}
-                                    {/*            </div>*/}
-                                    {/*        </div>*/}
-                                    {/*    </div>*/}
-                                    {/*</div>*/}
-                                    {/*<div>*/}
-                                    {/*    <div className="slider-banner p-center slide-banner-1">*/}
-                                    {/*        <div className="slider-img">*/}
-                                    {/*            <ul className="layout1-slide-3">*/}
-                                    {/*                <li id="img-5"><img src="assets/images/layout-2/slider/3.2.png"*/}
-                                    {/*                                    className="img-fluid"*/}
-                                    {/*                                    alt="slider"/></li>*/}
-                                    {/*                <li id="img-6" className="slide-center"><img*/}
-                                    {/*                    src="assets/images/layout-2/slider/3.1.png"*/}
-                                    {/*                    className="img-fluid" alt="slider"/></li>*/}
-                                    {/*            </ul>*/}
-                                    {/*        </div>*/}
-                                    {/*        <div className="slider-banner-contain">*/}
-                                    {/*            <div>*/}
-                                    {/*                <h1>camera<span>Sale</span></h1>*/}
-                                    {/*                <h4>now start at $79</h4>*/}
-                                    {/*                <h2>70% off today</h2>*/}
-                                    {/*                <a href="html/product-page(left-sidebar).html"*/}
-                                    {/*                   className="btn btn-normal">*/}
-                                    {/*                    Shop Now*/}
-                                    {/*                </a>*/}
-                                    {/*            </div>*/}
-                                    {/*        </div>*/}
-                                    {/*    </div>*/}
-                                    {/*</div>*/}
+                                    <div>
+                                        <div className="slider-banner p-center slide-banner-1">
+                                            <div className="slider-img">
+                                                <ul className="layout1-slide-2">
+                                                    <li id="img-3" className="slide-center"><img
+                                                        src="assets/images/layout-2/slider/2.1.png"
+                                                        className="img-fluid" alt="slider"/></li>
+                                                    <li id="img-4" className="slide-center"><img
+                                                        src="assets/images/layout-2/slider/2.2.png"
+                                                        className="img-fluid" alt="slider"/></li>
+                                                </ul>
+                                            </div>
+                                            <div className="slider-banner-contain">
+                                                <div>
+                                                    <h1>big<span>Sale</span></h1>
+                                                    <h4>now start at $99</h4>
+                                                    <h2>50% off</h2>
+                                                    <a href="html/product-page(left-sidebar).html"
+                                                       className="btn btn-normal">
+                                                        Shop Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="slider-banner p-center slide-banner-1">
+                                            <div className="slider-img">
+                                                <ul className="layout1-slide-3">
+                                                    <li id="img-5"><img src="assets/images/layout-2/slider/3.2.png"
+                                                                        className="img-fluid"
+                                                                        alt="slider"/></li>
+                                                    <li id="img-6" className="slide-center"><img
+                                                        src="assets/images/layout-2/slider/3.1.png"
+                                                        className="img-fluid" alt="slider"/></li>
+                                                </ul>
+                                            </div>
+                                            <div className="slider-banner-contain">
+                                                <div>
+                                                    <h1>camera<span>Sale</span></h1>
+                                                    <h4>now start at $79</h4>
+                                                    <h2>70% off today</h2>
+                                                    <a href="html/product-page(left-sidebar).html"
+                                                       className="btn btn-normal">
+                                                        Shop Now
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
