@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-
+import SideBar from "./sidebar"; 
 class Home extends Component {
 
     constructor(props) {
@@ -12,11 +12,20 @@ class Home extends Component {
             emailId: null,
             password: null
         }
+        this.openAccount = this.openAccount.bind(this);
+        this.closeAccount = this.closeAccount.bind(this);
     }
-
+    closeAccount() {
+        console.log("remove")
+        document.getElementById("myAccount").classList.remove('open-side');
+    }
+    openAccount() {
+        document.getElementById("myAccount").classList.add('open-side');
+     }
     render() {
         return (
             <div>
+                <SideBar closeAccount={this.closeAccount}></SideBar>
                 <div className="layout-header2">
                     <div className="container">
                         <div className="col-md-12">
@@ -103,7 +112,7 @@ class Home extends Component {
                                                 <a href="javascript:void(0)">
                                                 </a>
                                             </li>
-                                            <li className="mobile-user " onClick="openAccount()">
+                                            <li className="mobile-user " onClick={this.openAccount}>
                                                 <a href="javascript:void(0)">
                                           {/*          <svg version="1.1" xmlns="http://www.w3.org/2000/svg"*/}
                                           {/*               xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"*/}
@@ -675,9 +684,11 @@ class Home extends Component {
 
 
                                         <li className="mobile-user onhover-dropdown Login-v1"
-                                            onClick="openAccount()"> Login
+                                            onClick={this.openAccount}> 
+                                            <i class="fa fa-user" aria-hidden="true" style={{color: "#fff",fontSize:"30px"}}></i>
+                                            
                                         </li>
-                                        // <li className="mobile-setting" onClick="openSetting()">Login
+                                        // <li className="mobile-setting" onClick="openSetting()">
                                         //     <a href="javascript:void(0)">
                                                 {/*<svg enable-background="new 0 0 512 512" viewBox="0 0 512 512"*/}
                                                 {/*     xmlns="http://www.w3.org/2000/svg">*/}
