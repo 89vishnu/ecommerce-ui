@@ -1,5 +1,12 @@
 import React, {Component} from "react";
-import SideBar from "./sidebar"; 
+import SideBar from "./js/sidebar";
+import {TopToBottomBar} from "./js/topToBottomBar";
+import {HomeDropDownBar} from "./js/homeDropDownBar";
+import {ShopDropDownBar} from "./js/shopDropDownBar";
+import {ProductDropDownBar} from "./js/productDropDownBar";
+import {FeaturesDropDownBar} from "./js/featuresDropDownBar";
+import {BlogDropDownBar} from "./js/blogDropDownBar";
+
 class Home extends Component {
 
     constructor(props) {
@@ -14,14 +21,19 @@ class Home extends Component {
         }
         this.openAccount = this.openAccount.bind(this);
         this.closeAccount = this.closeAccount.bind(this);
+        this.shopByCategory = this.shopByCategory.bind(this);
     }
     closeAccount() {
         console.log("remove")
         document.getElementById("myAccount").classList.remove('open-side');
+        document.getElementById("searchbar-input-id").classList.remove('show');
     }
     openAccount() {
         document.getElementById("myAccount").classList.add('open-side');
-     }
+    }
+    shopByCategory() {
+        document.getElementById("searchbar-input-id").classList.add('show');
+    }
     render() {
         return (
             <div>
@@ -190,7 +202,7 @@ class Home extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="searchbar-input">
+                    <div id="searchbar-input-id" className="searchbar-input">
                         <div className="input-group">
                             <span className="input-group-text">
             {/*<!--          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28.931px" height="28.932px" viewBox="0 0 28.931 28.932" style="enable-background:new 0 0 28.931 28.932;" xml:space="preserve"><g><path d="M28.344,25.518l-6.114-6.115c1.486-2.067,2.303-4.537,2.303-7.137c0-3.275-1.275-6.355-3.594-8.672C18.625,1.278,15.543,0,12.266,0C8.99,0,5.909,1.275,3.593,3.594C1.277,5.909,0.001,8.99,0.001,12.266c0,3.276,1.275,6.356,3.592,8.674c2.316,2.316,5.396,3.594,8.673,3.594c2.599,0,5.067-0.813,7.136-2.303l6.114,6.115c0.392,0.391,0.902,0.586,1.414,0.586c0.513,0,1.024-0.195,1.414-0.586C29.125,27.564,29.125,26.299,28.344,25.518z M6.422,18.111c-1.562-1.562-2.421-3.639-2.421-5.846S4.86,7.983,6.422,6.421c1.561-1.562,3.636-2.422,5.844-2.422s4.284,0.86,5.845,2.422c1.562,1.562,2.422,3.638,2.422,5.845s-0.859,4.283-2.422,5.846c-1.562,1.562-3.636,2.42-5.845,2.42S7.981,19.672,6.422,18.111z"/></g></svg>-->*/}
@@ -218,7 +230,7 @@ class Home extends Component {
                                 </div>
                                 <div className="nav-block">
 
-                                    <div className="nav-left">
+                                    <div className="nav-left" onClick={this.shopByCategory}>
 
                                         <nav className="navbar" data-bs-toggle="collapse"
                                              data-bs-target="#navbarToggleExternalContent">
@@ -228,71 +240,7 @@ class Home extends Component {
                                             </button>
                                             <h5 className="mb-0  text-white title-font">Shop by category</h5>
                                         </nav>
-                                        <div className="collapse  nav-desk" id="navbarToggleExternalContent">
-                                            <ul className="nav-cat title-font">
-                                                <li><a href="html/category-page(left-sidebar).html"><img
-                                                    src="assets/images/layout-1/nav-img/01.png" alt="category-product"/>
-                                                    western ware</a></li>
-                                                <li><a href="html/category-page(left-sidebar).html"><img
-                                                    src="assets/images/layout-1/nav-img/02.png"
-                                                    alt="category-product"/> TV,
-                                                    Appliances</a></li>
-                                                <li><a href="html/category-page(left-sidebar).html"><img
-                                                    src="assets/images/layout-1/nav-img/03.png" alt="category-product"/>
-                                                    Pets Products</a></li>
-                                                <li><a href="html/category-page(left-sidebar).html"><img
-                                                    src="assets/images/layout-1/nav-img/04.png" alt="category-product"/>
-                                                    Car, Motorbike</a></li>
-                                                <li><a href="html/category-page(left-sidebar).html"><img
-                                                    src="assets/images/layout-1/nav-img/05.png" alt="category-product"/>
-                                                    Industrial Products</a></li>
-                                                <li><a href="html/category-page(left-sidebar).html"><img
-                                                    src="assets/images/layout-1/nav-img/06.png" alt="category-product"/>
-                                                    Beauty, Health Products</a></li>
-                                                <li><a href="html/category-page(left-sidebar).html"><img
-                                                    src="assets/images/layout-1/nav-img/07.png" alt="category-product"/>
-                                                    Grocery Products </a></li>
-                                                <li><a href="html/category-page(left-sidebar).html"><img
-                                                    src="assets/images/layout-1/nav-img/08.png" alt="category-product"/>
-                                                    Sports</a></li>
-                                                <li><a href="html/category-page(left-sidebar).html"><img
-                                                    src="assets/images/layout-1/nav-img/09.png" alt="category-product"/>
-                                                    Bags, Luggage</a></li>
-                                                <li><a href="html/category-page(left-sidebar).html"><img
-                                                    src="assets/images/layout-1/nav-img/10.png" alt="category-product"/>
-                                                    Movies, Music </a></li>
-                                                <li><a href="html/category-page(left-sidebar).html"><img
-                                                    src="assets/images/layout-1/nav-img/11.png" alt="category-product"/>
-                                                    Video Games</a></li>
-                                                <li><a href="html/category-page(left-sidebar).html"><img
-                                                    src="assets/images/layout-1/nav-img/12.png" alt="category-product"/>
-                                                    Toys, Baby Products</a></li>
-                                                <li>
-                                                    <ul className="mor-slide-open">
-                                                        <li><a href="html/category-page(left-sidebar).html"><img
-                                                            src="assets/images/layout-1/nav-img/08.png"
-                                                            alt="category-product"/> Sports</a></li>
-                                                        <li><a href="html/category-page(left-sidebar).html"><img
-                                                            src="assets/images/layout-1/nav-img/09.png"
-                                                            alt="category-product"/> Bags, Luggage</a></li>
-                                                        <li><a href="html/category-page(left-sidebar).html"><img
-                                                            src="assets/images/layout-1/nav-img/10.png"
-                                                            alt="category-product"/> Movies, Music </a></li>
-                                                        <li><a href="html/category-page(left-sidebar).html"><img
-                                                            src="assets/images/layout-1/nav-img/11.png"
-                                                            alt="category-product"/> Video Games</a></li>
-                                                        <li><a href="html/category-page(left-sidebar).html"><img
-                                                            src="assets/images/layout-1/nav-img/12.png"
-                                                            alt="category-product"/> Toys, Baby Products</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a className="mor-slide-click">mor category <i
-                                                        className="fa fa-angle-down pro-down"></i><i
-                                                        className="fa fa-angle-up pro-up"></i></a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                                        <TopToBottomBar closeAccount={this.closeAccount}/>
                                     </div>
                                 </div>
                                 <div className="menu-block">
@@ -307,23 +255,8 @@ class Home extends Component {
                                             {/* <!--HOME-->*/}
                                             <li>
                                                 <a className="dark-menu-item" href="javascript:void(0)">Home</a>
-                                                <ul>
-                                                    <li><a href="html/index.html">mega store 1</a></li>
-                                                    <li><a href="html/layout-2.html">mega store 2</a></li>
-                                                    <li><a href="html/layout-3.html">mega store 3</a></li>
-                                                    <li><a href="html/layout-4.html">mega store 4</a></li>
-                                                    <li><a href="html/megastore.html">mega store 5</a></li>
-                                                    <li><a href="html/layout-5.html">electronics</a></li>
-                                                    <li><a href="html/layout-6.html">vegetable</a></li>
-                                                    <li><a href="html/furniture.html">furniture</a></li>
-                                                    <li><a href="html/cosmetic.html">cosmetic</a></li>
-                                                    <li><a href="html/kids.html">kids</a></li>
-                                                    <li><a href="html/tools.html">tools</a></li>
-                                                    <li><a href="html/grocery.html">grocery</a></li>
-                                                    <li><a href="html/pets.html">pets</a></li>
-                                                    <li><a href="html/farming.html">farming</a></li>
-                                                    <li><a href="html/digital-marketplace.html">digital marketplace</a>
-                                                    </li>
+                                                <ul id="home-ui-id">
+                                                    <HomeDropDownBar></HomeDropDownBar>
                                                 </ul>
                                             </li>
                                             {/*<!--HOME-END-->
@@ -331,23 +264,7 @@ class Home extends Component {
                                             <li>
                                                 <a className="dark-menu-item" href="javascript:void(0)">shop</a>
                                                 <ul>
-                                                    <li><a href="html/category-page(left-sidebar).html">left sidebar</a>
-                                                    </li>
-                                                    <li><a href="html/category-page(right-sidebar).html">right
-                                                        sidebar</a></li>
-                                                    <li><a href="html/category-page(no-sidebar).html">no sidebar</a>
-                                                    </li>
-                                                    <li><a href="html/category-page(sidebar-popup).html">sidebar
-                                                        popup</a></li>
-                                                    <li><a href="html/category-page(metro).html">metro </a></li>
-                                                    <li><a href="html/category-page(full-width).html">full width </a>
-                                                    </li>
-                                                    <li><a href="html/category-page(infinite-scroll).html">infinite
-                                                        scroll</a>
-                                                    </li>
-                                                    <li><a href="html/category-page(3-grid).html">3 grid</a></li>
-                                                    <li><a href="html/category-page(6-grid).html">6 grid</a></li>
-                                                    <li><a href="html/category-page(list-view).html">list view</a></li>
+                                                    <ShopDropDownBar></ShopDropDownBar>
                                                 </ul>
                                             </li>
                                             {/*<!--SHOP-END-->
@@ -356,152 +273,7 @@ class Home extends Component {
                                                                     href="javascript:void(0)">product
                                             </a>
                                                 <ul className="mega-menu full-mega-menu ">
-                                                    <li>
-                                                        <div className="container">
-                                                            <div className="row">
-                                                                <div className="col mega-box">
-                                                                    <div className="link-section">
-                                                                        <div className="menu-title">
-                                                                            <h5>sidebar</h5>
-                                                                        </div>
-                                                                        <div className="menu-content">
-                                                                            <ul>
-                                                                                <li>
-                                                                                    <a href="html/product-page(left-sidebar).html">left
-                                                                                        sidebar</a></li>
-                                                                                <li>
-                                                                                    <a href="html/product-page(right-sidebar).html">right
-                                                                                        sidebar</a></li>
-                                                                                <li>
-                                                                                    <a href="html/product-page(no-sidebar).html">non
-                                                                                        sidebar</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col mega-box">
-                                                                    <div className="link-section">
-                                                                        <div className="menu-title">
-                                                                            <h5>bonus layout</h5>
-                                                                        </div>
-                                                                        <div className="menu-content">
-                                                                            <ul>
-                                                                                <li><a
-                                                                                    href="html/product-page(bundle).html">bundle</a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="html/product-page(image-swatch).html">image
-                                                                                        swatch</a></li>
-                                                                                <li>
-                                                                                    <a href="html/product-page(vertical-tab).html">vertical
-                                                                                        tab</a></li>
-                                                                                <li>
-                                                                                    <a href="html/product-page(video-thumbnail).html">video
-                                                                                        thumbnail</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col mega-box">
-                                                                    <div className="link-section">
-                                                                        <div className="menu-title">
-                                                                            <h5>product layout </h5>
-                                                                        </div>
-                                                                        <div className="menu-content">
-                                                                            <ul>
-                                                                                <li><a
-                                                                                    href="html/product-page(4-image).html">4
-                                                                                    image </a></li>
-                                                                                <li><a
-                                                                                    href="html/product-page(sticky).html">sticky</a>
-                                                                                </li>
-                                                                                <li><a
-                                                                                    href="html/product-page(accordian).html">accordian</a>
-                                                                                </li>
-                                                                                <li><a
-                                                                                    href="html/product-page(360-view).html">360
-                                                                                    view</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col mega-box">
-                                                                    <div className="link-section">
-                                                                        <div className="menu-title">
-                                                                            <h5>thumbnail image</h5>
-                                                                        </div>
-                                                                        <div className="menu-content">
-                                                                            <ul>
-                                                                                <li>
-                                                                                    <a href="html/product-page(left-image).html">left
-                                                                                        image</a></li>
-                                                                                <li>
-                                                                                    <a href="html/product-page(right-image).html">right
-                                                                                        image</a></li>
-                                                                                <li>
-                                                                                    <a href="html/product-page(image-outside).html">image
-                                                                                        outside</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col mega-box">
-                                                                    <div className="link-section">
-                                                                        <div className="menu-title">
-                                                                            <h5>3 column</h5>
-                                                                        </div>
-                                                                        <div className="menu-content">
-                                                                            <ul>
-                                                                                <li>
-                                                                                    <a href="html/product-page(3-col-left).html">thumbnail
-                                                                                        left</a></li>
-                                                                                <li>
-                                                                                    <a href="html/product-page(3-col-right).html">thumbnail
-                                                                                        right</a></li>
-                                                                                <li><a
-                                                                                    href="html/product-page(3-column).html">thubnail
-                                                                                    bottom</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col mega-box">
-                                                                    <div className="link-section">
-                                                                        <div className="menu-title">
-                                                                            <h5>product element</h5>
-                                                                        </div>
-                                                                        <div className="menu-content">
-                                                                            <ul>
-                                                                                <li><a
-                                                                                    href="html/element-productbox.html">product
-                                                                                    box</a></li>
-                                                                                <li><a
-                                                                                    href="html/element-product-slider.html">product
-                                                                                    slider</a></li>
-                                                                                <li><a
-                                                                                    href="html/element-no_slider.html">no
-                                                                                    slider</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div className="row menu-banner">
-                                                                <div className="col-lg-6">
-                                                                    <div>
-                                                                        <img src="assets/images/menu-banner1.jpg"
-                                                                             alt="menu-banner" className="img-fluid"/>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-lg-6">
-                                                                    <div>
-                                                                        <img src="assets/images/menu-banner2.jpg"
-                                                                             alt="menu-banner" className="img-fluid"/>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+                                                    <ProductDropDownBar></ProductDropDownBar>
                                                 </ul>
                                             </li>
                                             {/*product-meu end*/}
@@ -510,145 +282,7 @@ class Home extends Component {
                                             <li className="mega">
                                                 <a className="dark-menu-item" href="javascript:void(0)">features</a>
                                                 <ul className="mega-menu full-mega-menu ratio_landscape">
-                                                    <li>
-                                                        <div className="container">
-                                                            <div className="row">
-                                                                <div className="col mega-box">
-                                                                    <div className="link-section">
-                                                                        <div className="menu-title">
-                                                                            <h5>portfolio</h5></div>
-                                                                        <div className="menu-content">
-                                                                            <ul>
-                                                                                <li><a href="html/grid-2-col.html">portfolio
-                                                                                    grid 2</a></li>
-                                                                                <li><a href="html/grid-3-col.html">portfolio
-                                                                                    grid 3</a></li>
-                                                                                <li><a href="html/grid-4-col.html">portfolio
-                                                                                    grid 4</a></li>
-                                                                                <li><a href="html/grid-6-col.html">portfolio
-                                                                                    grid 6</a></li>
-                                                                                <li><a href="html/masonary-2-grid.html">mesonary
-                                                                                    grid 2</a></li>
-                                                                                <li><a href="html/masonary-3-grid.html">mesonary
-                                                                                    grid 3</a></li>
-                                                                                <li><a href="html/masonary-4-grid.html">mesonary
-                                                                                    grid 4</a></li>
-                                                                                <li><a
-                                                                                    href="html/masonary-fullwidth.html">mesonary
-                                                                                    full width</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col mega-box">
-                                                                    <div className="link-section">
-                                                                        <div className="menu-title">
-                                                                            <h5>add to cart</h5></div>
-                                                                        <div className="menu-content">
-                                                                            <ul>
-                                                                                <li><a href="html/layout-5.html">cart
-                                                                                    modal
-                                                                                    popup</a></li>
-                                                                                <li><a href="html/layout-6.html">qty.
-                                                                                    counter </a></li>
-                                                                                <li><a href="html/index.html">cart
-                                                                                    top</a></li>
-                                                                                <li><a href="html/layout-2.html">cart
-                                                                                    bottom</a>
-                                                                                </li>
-                                                                                <li><a href="html/layout-3.html">cart
-                                                                                    left</a>
-                                                                                </li>
-                                                                                <li><a href="html/layout-4.html">cart
-                                                                                    right</a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col mega-box">
-                                                                    <div className="link-section">
-                                                                        <div className="menu-title">
-                                                                            <h5>shortcodes</h5></div>
-                                                                        <div className="menu-content">
-                                                                            <ul>
-                                                                                <li><a
-                                                                                    href="html/element-title.html">title</a>
-                                                                                </li>
-                                                                                <li><a href="html/element-banner.html">collection
-                                                                                    banner</a></li>
-                                                                                <li><a
-                                                                                    href="html/element-category.html">category</a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="html/element-service.html">service</a>
-                                                                                </li>
-                                                                                <li><a
-                                                                                    href="html/element-image-ratio.html">image
-                                                                                    size ratio</a></li>
-                                                                                <li><a
-                                                                                    href="html/element-tab.html">tab</a>
-                                                                                </li>
-                                                                                <li>
-                                                                                    <a href="html/element-counter.html">counter</a>
-                                                                                </li>
-                                                                                <li><a
-                                                                                    href="html/element-pricingtable.html">pricing
-                                                                                    table</a></li>
-                                                                                <li><a
-                                                                                    href="html/element-team.html">team</a>
-                                                                                </li>
-                                                                                <li><a
-                                                                                    href="html/element-testimonial.html">testimonial</a>
-                                                                                </li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col mega-box">
-                                                                    <div className="link-section">
-                                                                        <div className="menu-title">
-                                                                            <h5>email template</h5>
-                                                                        </div>
-                                                                        <div className="menu-content">
-                                                                            <ul>
-                                                                                <li>
-                                                                                    <a href="email-template/email-order-success.html">order
-                                                                                        success</a></li>
-                                                                                <li>
-                                                                                    <a href="email-template/email-order-success-tow.html">order
-                                                                                        success 2</a></li>
-                                                                                <li>
-                                                                                    <a href="email-template/email-template.html">email
-                                                                                        template</a></li>
-                                                                                <li>
-                                                                                    <a href="email-template/email-template-tow.html">email
-                                                                                        template 2</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                        <div className="menu-title menu-secon-title">
-                                                                            <h5>Easy to use</h5>
-                                                                        </div>
-                                                                        <div className="menu-content">
-                                                                            <ul>
-                                                                                <li><a href="html/button.html">element
-                                                                                    button</a></li>
-                                                                                <li><a href="html/instagram.html">element
-                                                                                    instagram</a></li>
-                                                                            </ul>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div className="col mega-box product ">
-                                                                    <div className="mega-img">
-                                                                        <img src="assets/images/mega-banner.jpg"
-                                                                             alt="menu-banner" className="img-fluid"/>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+                                                    <FeaturesDropDownBar></FeaturesDropDownBar>
                                                 </ul>
                                             </li>
                                             {/*mega-meu end*/}
@@ -662,12 +296,7 @@ class Home extends Component {
                                             <li>
                                                 <a className="dark-menu-item" href="javascript:void(0)">blog</a>
                                                 <ul>
-                                                    <li><a href="html/blog(left-sidebar).html">left sidebar</a></li>
-                                                    <li><a href="html/blog(right-sidebar).html">right sidebar</a></li>
-                                                    <li><a href="html/blog(no-sidebar).html">no sidebar</a></li>
-                                                    <li><a href="html/blog-details.html">blog details</a></li>
-                                                    <li><a href="html/blog-creative(left-sidebar).html">creative left
-                                                        sidebar</a></li>
+                                                    <BlogDropDownBar></BlogDropDownBar>
                                                 </ul>
                                             </li>
                                             {/*blog-meu end*/}

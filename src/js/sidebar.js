@@ -6,7 +6,7 @@ import React, { Component } from "react";
                 <a href="javascript:void(0)" class="overlay" onClick={this.props.closeAccount}></a>
                 <div class="cart-inner">
                     <div class="cart_top">
-                        <h3>my account11</h3>
+                        <h3>my account</h3>
                         <div class="close-cart">
                             <a href="javascript:void(0)" onClick={this.props.closeAccount}>
                                 <i class="fa fa-times" aria-hidden="true"></i>
