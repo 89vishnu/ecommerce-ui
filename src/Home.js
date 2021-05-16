@@ -317,8 +317,8 @@ class Home extends Component {
                                             <i class="fa fa-user" aria-hidden="true" style={{color: "#fff",fontSize:"30px"}}></i>
                                             
                                         </li>
-                                        // <li className="mobile-setting" onClick="openSetting()">
-                                        //     <a href="javascript:void(0)">
+                                        <li className="mobile-setting" onClick="openSetting()">
+                                             <a href="javascript:void(0)">
                                                 {/*<svg enable-background="new 0 0 512 512" viewBox="0 0 512 512"*/}
                                                 {/*     xmlns="http://www.w3.org/2000/svg">*/}
                                                 {/*    <path*/}
@@ -469,92 +469,6 @@ class Home extends Component {
                                 <li><a href="html/category-page(left-sidebar).html">Vassarette </a></li>
                                 <li><a href="html/category-page(left-sidebar).html">Oysho</a></li>
                             </ul>
-                        </div>
-                    </div>
-                </section>
-
-                <section className="theme-slider home-slide b-g-white " id="home-slide">
-                    <div className="custom-container">
-                        <div className="row">
-                            <div className="col">
-                                <div className="slide-1 no-arrow">
-                                    <div>
-                                        <div className="slider-banner p-center slide-banner-1">
-                                            <div className="slider-img">
-                                                <ul className="layout1-slide-1">
-                                                    <li id="img-1"><img src="assets/images/layout-2/slider/1.1.png"
-                                                                        className="img-fluid"
-                                                                        alt="slider"/></li>
-                                                    <li id="img-2" className="slide-center"><img
-                                                        src="assets/images/layout-2/slider/1.2.png"
-                                                        className="img-fluid" alt="slider"/></li>
-                                                </ul>
-                                            </div>
-                                            <div className="slider-banner-contain">
-                                                <div>
-                                                    <h1>mi<span>Mobile</span></h1>
-                                                    <h4>fast and light</h4>
-                                                    <h2>Pixel Perfect Deal Camera</h2>
-                                                    <a href="html/product-page(left-sidebar).html"
-                                                       className="btn btn-normal">
-                                                        Shop Now
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="slider-banner p-center slide-banner-1">
-                                            <div className="slider-img">
-                                                <ul className="layout1-slide-2">
-                                                    <li id="img-3" className="slide-center"><img
-                                                        src="assets/images/layout-2/slider/2.1.png"
-                                                        className="img-fluid" alt="slider"/></li>
-                                                    <li id="img-4" className="slide-center"><img
-                                                        src="assets/images/layout-2/slider/2.2.png"
-                                                        className="img-fluid" alt="slider"/></li>
-                                                </ul>
-                                            </div>
-                                            <div className="slider-banner-contain">
-                                                <div>
-                                                    <h1>big<span>Sale</span></h1>
-                                                    <h4>now start at $99</h4>
-                                                    <h2>50% off</h2>
-                                                    <a href="html/product-page(left-sidebar).html"
-                                                       className="btn btn-normal">
-                                                        Shop Now
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <div className="slider-banner p-center slide-banner-1">
-                                            <div className="slider-img">
-                                                <ul className="layout1-slide-3">
-                                                    <li id="img-5"><img src="assets/images/layout-2/slider/3.2.png"
-                                                                        className="img-fluid"
-                                                                        alt="slider"/></li>
-                                                    <li id="img-6" className="slide-center"><img
-                                                        src="assets/images/layout-2/slider/3.1.png"
-                                                        className="img-fluid" alt="slider"/></li>
-                                                </ul>
-                                            </div>
-                                            <div className="slider-banner-contain">
-                                                <div>
-                                                    <h1>camera<span>Sale</span></h1>
-                                                    <h4>now start at $79</h4>
-                                                    <h2>70% off today</h2>
-                                                    <a href="html/product-page(left-sidebar).html"
-                                                       className="btn btn-normal">
-                                                        Shop Now
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </section>
@@ -4490,79 +4404,79 @@ class Home extends Component {
                         </div>
                     </div>
                 </section>
-                <section className="testimonial testimonial-inverse">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-md-12">
-                                <div className="slide-1 no-arrow">
-                                    <div>
-                                        <div className="testimonial-contain">
-                                            <div className="media">
-                                                <div className="testimonial-img">
-                                                    <img src="assets/images/testimonial/1.jpg"
-                                                         className="img-fluid rounded-circle  "
-                                                         alt="testimonial"/>
-                                                </div>
-                                                <div className="media-body">
-                                                    <h5>mark jecno</h5>
-                                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random
-                                                        text. It has roots
-                                                        in a piece of classical Latin literature from 45 BC, making it
-                                                        over 2000 years
-                                                        old. Richard McClintock, a Latin professor at Hampden-Sydney
-                                                        College in
-                                                        Virginia.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    {/*<div>*/}
-                                    {/*    <div className="testimonial-contain">*/}
-                                    {/*        <div className="media">*/}
-                                    {/*            <div className="testimonial-img">*/}
-                                    {/*                <img src="assets/images/testimonial/2.jpg"*/}
-                                    {/*                     className="img-fluid rounded-circle  "*/}
-                                    {/*                     alt="testimonial"/>*/}
-                                    {/*            </div>*/}
-                                    {/*            <div className="media-body">*/}
-                                    {/*                <h5>mark jecno</h5>*/}
-                                    {/*                <p>Contrary to popular belief, Lorem Ipsum is not simply random*/}
-                                    {/*                    text. It has roots*/}
-                                    {/*                    in a piece of classical Latin literature from 45 BC, making it*/}
-                                    {/*                    over 2000 years*/}
-                                    {/*                    old. Richard McClintock, a Latin professor at Hampden-Sydney*/}
-                                    {/*                    College in*/}
-                                    {/*                    Virginia.</p>*/}
-                                    {/*            </div>*/}
-                                    {/*        </div>*/}
-                                    {/*    </div>*/}
-                                    {/*</div>*/}
-                                    {/*<div>*/}
-                                    {/*    <div className="testimonial-contain">*/}
-                                    {/*        <div className="media">*/}
-                                    {/*            <div className="testimonial-img">*/}
-                                    {/*                <img src="assets/images/testimonial/3.jpg"*/}
-                                    {/*                     className="img-fluid rounded-circle  "*/}
-                                    {/*                     alt="testimonial"/>*/}
-                                    {/*            </div>*/}
-                                    {/*            <div className="media-body">*/}
-                                    {/*                <h5>mark jecno</h5>*/}
-                                    {/*                <p>Contrary to popular belief, Lorem Ipsum is not simply random*/}
-                                    {/*                    text. It has roots*/}
-                                    {/*                    in a piece of classical Latin literature from 45 BC, making it*/}
-                                    {/*                    over 2000 years*/}
-                                    {/*                    old. Richard McClintock, a Latin professor at Hampden-Sydney*/}
-                                    {/*                    College in*/}
-                                    {/*                    Virginia.</p>*/}
-                                    {/*            </div>*/}
-                                    {/*        </div>*/}
-                                    {/*    </div>*/}
-                                    {/*</div>*/}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                {/*<section className="testimonial testimonial-inverse">*/}
+                {/*    <div className="container">*/}
+                {/*        <div className="row">*/}
+                {/*            <div className="col-md-12">*/}
+                {/*                <div className="slide-1 no-arrow">*/}
+                {/*                    <div>*/}
+                {/*                        <div className="testimonial-contain">*/}
+                {/*                            <div className="media">*/}
+                {/*                                <div className="testimonial-img">*/}
+                {/*                                    <img src="assets/images/testimonial/1.jpg"*/}
+                {/*                                         className="img-fluid rounded-circle  "*/}
+                {/*                                         alt="testimonial"/>*/}
+                {/*                                </div>*/}
+                {/*                                <div className="media-body">*/}
+                {/*                                    <h5>mark jecno</h5>*/}
+                {/*                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random*/}
+                {/*                                        text. It has roots*/}
+                {/*                                        in a piece of classical Latin literature from 45 BC, making it*/}
+                {/*                                        over 2000 years*/}
+                {/*                                        old. Richard McClintock, a Latin professor at Hampden-Sydney*/}
+                {/*                                        College in*/}
+                {/*                                        Virginia.</p>*/}
+                {/*                                </div>*/}
+                {/*                            </div>*/}
+                {/*                        </div>*/}
+                {/*                    </div>*/}
+                {/*                    /!*<div>*!/*/}
+                {/*                    /!*    <div className="testimonial-contain">*!/*/}
+                {/*                    /!*        <div className="media">*!/*/}
+                {/*                    /!*            <div className="testimonial-img">*!/*/}
+                {/*                    /!*                <img src="assets/images/testimonial/2.jpg"*!/*/}
+                {/*                    /!*                     className="img-fluid rounded-circle  "*!/*/}
+                {/*                    /!*                     alt="testimonial"/>*!/*/}
+                {/*                    /!*            </div>*!/*/}
+                {/*                    /!*            <div className="media-body">*!/*/}
+                {/*                    /!*                <h5>mark jecno</h5>*!/*/}
+                {/*                    /!*                <p>Contrary to popular belief, Lorem Ipsum is not simply random*!/*/}
+                {/*                    /!*                    text. It has roots*!/*/}
+                {/*                    /!*                    in a piece of classical Latin literature from 45 BC, making it*!/*/}
+                {/*                    /!*                    over 2000 years*!/*/}
+                {/*                    /!*                    old. Richard McClintock, a Latin professor at Hampden-Sydney*!/*/}
+                {/*                    /!*                    College in*!/*/}
+                {/*                    /!*                    Virginia.</p>*!/*/}
+                {/*                    /!*            </div>*!/*/}
+                {/*                    /!*        </div>*!/*/}
+                {/*                    /!*    </div>*!/*/}
+                {/*                    /!*</div>*!/*/}
+                {/*                    /!*<div>*!/*/}
+                {/*                    /!*    <div className="testimonial-contain">*!/*/}
+                {/*                    /!*        <div className="media">*!/*/}
+                {/*                    /!*            <div className="testimonial-img">*!/*/}
+                {/*                    /!*                <img src="assets/images/testimonial/3.jpg"*!/*/}
+                {/*                    /!*                     className="img-fluid rounded-circle  "*!/*/}
+                {/*                    /!*                     alt="testimonial"/>*!/*/}
+                {/*                    /!*            </div>*!/*/}
+                {/*                    /!*            <div className="media-body">*!/*/}
+                {/*                    /!*                <h5>mark jecno</h5>*!/*/}
+                {/*                    /!*                <p>Contrary to popular belief, Lorem Ipsum is not simply random*!/*/}
+                {/*                    /!*                    text. It has roots*!/*/}
+                {/*                    /!*                    in a piece of classical Latin literature from 45 BC, making it*!/*/}
+                {/*                    /!*                    over 2000 years*!/*/}
+                {/*                    /!*                    old. Richard McClintock, a Latin professor at Hampden-Sydney*!/*/}
+                {/*                    /!*                    College in*!/*/}
+                {/*                    /!*                    Virginia.</p>*!/*/}
+                {/*                    /!*            </div>*!/*/}
+                {/*                    /!*        </div>*!/*/}
+                {/*                    /!*    </div>*!/*/}
+                {/*                    /!*</div>*!/*/}
+                {/*                </div>*/}
+                {/*            </div>*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</section>*/}
 
                 <div id="myAccount" className="add_to_cart right account-bar">
                     <a href="javascript:void(0)" className="overlay" onClick="closeAccount()"></a>

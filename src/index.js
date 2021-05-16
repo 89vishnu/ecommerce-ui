@@ -4,7 +4,6 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ApplicationMenu from './ApplicationMenu';
-import {Home} from './Home'
 
 ReactDOM.render(
   <React.StrictMode>
