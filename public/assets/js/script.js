@@ -2906,14 +2906,11 @@ function openCart() {
 function closeCart() {
   document.getElementById("cart_side").classList.remove('open-side');
 }
-
-
-
 function openAccount() {
   document.getElementById("myAccount").classList.add('open-side');
 }
 function closeAccount() {
-  document.getElementById("myAccount").classList.remove('open-side');
+  document.getElementById("signUp").classList.remove('open-side');
 }
 
 function openWishlist() {
