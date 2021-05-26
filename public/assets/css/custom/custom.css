@@ -5,3 +5,7 @@
 .display-none-div {
     display: none;
 }
+
+.adding-padding-top-space {
+    padding-top: 14px;
+}

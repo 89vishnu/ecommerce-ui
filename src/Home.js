@@ -23,37 +23,61 @@ class Home extends Component {
         this.closeAccount = this.closeAccount.bind(this);
         this.shopByCategory = this.shopByCategory.bind(this);
     }
+
     closeAccount() {
         console.log("remove")
         document.getElementById("myAccount").classList.remove('open-side');
         document.getElementById("searchbar-input-id").classList.remove('show');
-        document.getElementById("cart_side").classList.remove('open-side');
+        document.getElementById("myCartId").classList.remove('open-side');
+        document.getElementById("wishlist_side").classList.remove('open-side');
     }
+
     openAccount() {
         document.getElementById("myAccount").classList.add('open-side');
     }
+
     shopByCategory() {
         document.getElementById("searchbar-input-id").classList.add('show');
     }
+
     openShopingCart() {
-        document.getElementById("cart_side").classList.add('open-side');
+        document.getElementById("myCartId").classList.add('open-side');
     }
+
     closeCart() {
-        document.getElementById("cart_side").classList.remove('open-side');
+        document.getElementById("myCartId").classList.remove('open-side');
     }
+
     backToHome() {
         document.getElementById("middleContent").classList.remove('display-none-div');
-        document.getElementById("cardPageId").classList.add('display-none-div');
+        document.getElementById("cartPageId").classList.add('display-none-div');
+        document.getElementById("checkOutId").classList.add('display-none-div');
+        document.getElementById("wishListDetailId").classList.add('display-none-div');
     }
+
     viewCart() {
         console.log("view-cart");
-        document.getElementById("cart_side").classList.remove('open-side');
+        document.getElementById("myCartId").classList.remove('open-side');
+        document.getElementById("cartPageId").classList.remove('display-none-div');
         document.getElementById("middleContent").classList.add('display-none-div');
-        document.getElementById("cardPageId").classList.remove('display-none-div');
+        document.getElementById("checkOutId").classList.add('display-none-div');
     }
 
     checkout() {
         console.log("check-out");
+        document.getElementById("middleContent").classList.add('display-none-div');
+        document.getElementById("cartPageId").classList.add('display-none-div');
+        document.getElementById("myCartId").classList.remove('open-side');
+        document.getElementById("checkOutId").classList.remove('display-none-div');
+    }
+
+    openWishList() {
+        document.getElementById("wishlist_side").classList.add('open-side');
+    }
+
+    loadDetailWishList() {
+        document.getElementById("middleContent").classList.add('display-none-div');
+        document.getElementById("wishListDetailId").classList.remove('display-none-div');
     }
 
     inputSet = (e) => {
@@ -356,7 +380,7 @@ class Home extends Component {
                                                     {/*</svg>*/}
                                                 </a>
                                             </li>
-                                            <li className="mobile-wishlist item-count" onClick="openWishlist()">
+                                            <li className="mobile-wishlist item-count" onClick={this.openWishList}>
                                                 <a href="javascript:void(0)">
                                                     <svg viewBox="0 -28 512.001 512" xmlns="http://www.w3.org/2000/svg">
                                                         <path
@@ -482,7 +506,42 @@ class Home extends Component {
                         </div>
                     </div>
                 </div>
-                <div id="middleContent">
+                <div id="middleContent" className="adding-padding-top-space">
+
+                    <section className="theme-slider home-slide b-g-white making-bottom-space" id="home-slide">
+                        <div className="custom-container">
+                            <div className="row">
+                                <div className="col">
+                                    <div className="slide-1 no-arrow">
+                                        <div>
+                                            <div className="slider-banner p-center slide-banner-1">
+                                                <div className="slider-img">
+                                                    <ul className="layout1-slide-1">
+                                                        <li id="img-1"><img src="assets/images/layout-2/slider/1.1.png"
+                                                                            className="img-fluid" alt="slider"/></li>
+                                                        <li id="img-2" className="slide-center"><img
+                                                            src="assets/images/layout-2/slider/1.2.png"
+                                                            className="img-fluid" alt="slider"/></li>
+                                                    </ul>
+                                                </div>
+                                                <div className="slider-banner-contain">
+                                                    <div>
+                                                        <h1>mi<span>Mobile</span></h1>
+                                                        <h4>fast and light</h4>
+                                                        <h2>Pixel Perfect Deal Camera</h2>
+                                                        <a href="html/product-page(left-sidebar).html"
+                                                           className="btn btn-normal">
+                                                            Shop Now
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
                     <section class="brand-panel">
                         <div class="brand-panel-box">
@@ -4513,7 +4572,151 @@ class Home extends Component {
                         </div>
                     </section>
                 </div>
-                <div id="cardPageId" class="display-none-div">
+                <div id="myCartId" className="add_to_cart top ">
+                    <a href="javascript:void(0)" className="overlay" onClick={this.closeCart}></a>
+                    <div className="cart-inner">
+                        <div className="cart_top">
+                            <h3>my cart1</h3>
+                            <div className="close-cart">
+                                <a href="javascript:void(0)" onClick={this.closeCart}>
+                                    <i className="fa fa-times" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div className="cart_media">
+                            <ul className="cart_product">
+                                <li>
+                                    <div className="media">
+                                        <a href="html/product-page(left-sidebar).html">
+                                            <img alt="megastore1" className="me-3"
+                                                 src="assets/images/layout-2/product/1.jpg"/>
+                                        </a>
+                                        <div className="media-body">
+                                            <a href="html/product-page(left-sidebar).html">
+                                                <h4>redmi not 3</h4>
+                                            </a>
+                                            <h6>
+                                                $80.00 <span>$120.00</span>
+                                            </h6>
+                                            <div className="addit-box">
+                                                <div className="qty-box">
+                                                    <div className="input-group">
+                                                        <button className="qty-minus"></button>
+                                                        <input className="qty-adj form-control" type="number"
+                                                               value="1"/>
+                                                        <button className="qty-plus"></button>
+                                                    </div>
+                                                </div>
+                                                <div className="pro-add">
+                                                    <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                       data-bs-target="#edit-product">
+                                                        <i data-feather="edit"></i>
+                                                    </a>
+                                                    <a href="javascript:void(0)">
+                                                        <i data-feather="trash-2"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="media">
+                                        <a href="html/product-page(left-sidebar).html">
+                                            <img alt="megastore1" className="me-3"
+                                                 src="assets/images/layout-2/product/2.jpg"/>
+                                        </a>
+                                        <div className="media-body">
+                                            <a href="html/product-page(left-sidebar).html">
+                                                <h4>Double Door Refrigerator</h4>
+                                            </a>
+                                            <h6>
+                                                $80.00 <span>$120.00</span>
+                                            </h6>
+                                            <div className="addit-box">
+                                                <div className="qty-box">
+                                                    <div className="input-group">
+                                                        <button className="qty-minus"></button>
+                                                        <input className="qty-adj form-control" type="number"
+                                                               value="1"/>
+                                                        <button className="qty-plus"></button>
+                                                    </div>
+                                                </div>
+                                                <div className="pro-add">
+                                                    <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                       data-bs-target="#edit-product">
+                                                        <i data-feather="edit"></i>
+                                                    </a>
+                                                    <a href="javascript:void(0)">
+                                                        <i data-feather="trash-2"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="media">
+                                        <a href="html/product-page(left-sidebar).html">
+                                            <img alt="megastore1" className="me-3"
+                                                 src="assets/images/layout-2/product/3.jpg"/>
+                                        </a>
+                                        <div className="media-body">
+                                            <a href="html/product-page(left-sidebar).html">
+                                                <h4>woman hande bag</h4>
+                                            </a>
+                                            <h6>
+                                                $80.00 <span>$120.00</span>
+                                            </h6>
+                                            <div className="addit-box">
+                                                <div className="qty-box">
+                                                    <div className="input-group">
+                                                        <button className="qty-minus"></button>
+                                                        <input className="qty-adj form-control" type="number"
+                                                               value="1"/>
+                                                        <button className="qty-plus"></button>
+                                                    </div>
+                                                </div>
+                                                <div className="pro-add">
+                                                    <a href="javascript:void(0)" data-bs-toggle="modal"
+                                                       data-bs-target="#edit-product">
+                                                        <i data-feather="edit"></i>
+                                                    </a>
+                                                    <a href="javascript:void(0)">
+                                                        <i data-feather="trash-2"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul className="cart_total">
+                                <li>
+                                    subtotal : <span>$1050.00</span>
+                                </li>
+                                <li>
+                                    shpping <span>free</span>
+                                </li>
+                                <li>
+                                    taxes <span>$0.00</span>
+                                </li>
+                                <li>
+                                    <div className="total">
+                                        total<span>$1050.00</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="buttons">
+                                        <a onClick={this.viewCart} className="btn btn-solid btn-sm">view cart</a>
+                                        <a onClick={this.checkout} className="btn btn-solid btn-sm ">checkout</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div id="cartPageId" className="display-none-div">
                     <div className="breadcrumb-main ">
                         <div className="container">
                             <div className="row">
@@ -4693,13 +4896,217 @@ class Home extends Component {
                         </div>
                     </section>
                 </div>
-                <div id="cart_side" className="add_to_cart top ">
-                    <a href="javascript:void(0)" className="overlay" onClick={this.closeCart}></a>
+                <div id="checkOutId" class="display-none-div">
+                    <div className="breadcrumb-main ">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col">
+                                    <div className="breadcrumb-contain">
+                                        <div>
+                                            <h2>checkout</h2>
+                                            <ul>
+                                                <li><a href="index.html">home</a></li>
+                                                <li><i className="fa fa-angle-double-right"></i></li>
+                                                <li><a href="javascript:void(0)">checkout</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <section className="section-big-py-space b-g-light">
+                        <div className="custom-container">
+                            <div className="checkout-page contact-page">
+                                <div className="checkout-form">
+                                    <form>
+                                        <div className="row">
+                                            <div className="col-lg-6 col-sm-12 col-xs-12">
+                                                <div className="checkout-title">
+                                                    <h3>Billing Details</h3></div>
+                                                <div className="theme-form">
+                                                    <div className="row check-out ">
+
+                                                        <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                                                            <label>First Name</label>
+                                                            <input type="text" name="field-name" value=""
+                                                                   placeholder=""/>
+                                                        </div>
+                                                        <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                                                            <label>Last Name</label>
+                                                            <input type="text" name="field-name" value=""
+                                                                   placeholder=""/>
+                                                        </div>
+                                                        <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                                                            <label className="field-label">Phone</label>
+                                                            <input type="text" name="field-name" value=""
+                                                                   placeholder=""/>
+                                                        </div>
+                                                        <div className="form-group col-md-6 col-sm-6 col-xs-12">
+                                                            <label className="field-label">Email Address</label>
+                                                            <input type="text" name="field-name" value=""
+                                                                   placeholder=""/>
+                                                        </div>
+                                                        <div className="form-group col-md-12 col-sm-12 col-xs-12">
+                                                            <label className="field-label">Country</label>
+                                                            <select>
+                                                                <option>India</option>
+                                                                <option>South Africa</option>
+                                                                <option>United State</option>
+                                                                <option>Australia</option>
+                                                            </select>
+                                                        </div>
+                                                        <div className="form-group col-md-12 col-sm-12 col-xs-12">
+                                                            <label className="field-label">Address</label>
+                                                            <input type="text" name="field-name" value=""
+                                                                   placeholder="Street address"/>
+                                                        </div>
+                                                        <div className="form-group col-md-12 col-sm-12 col-xs-12">
+                                                            <label className="field-label">Town/City</label>
+                                                            <input type="text" name="field-name" value=""
+                                                                   placeholder=""/>
+                                                        </div>
+                                                        <div className="form-group col-md-12 col-sm-6 col-xs-12">
+                                                            <label className="field-label">State / County</label>
+                                                            <input type="text" name="field-name" value=""
+                                                                   placeholder=""/>
+                                                        </div>
+                                                        <div className="form-group col-md-12 col-sm-6 col-xs-12">
+                                                            <label className="field-label">Postal Code</label>
+                                                            <input type="text" name="field-name" value=""
+                                                                   placeholder=""/>
+                                                        </div>
+                                                        <div
+                                                            className="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                                            <input type="checkbox" name="shipping-option"
+                                                                   id="account-option"/> &ensp;
+                                                                <label htmlFor="account-option">Create An
+                                                                    Account?</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="col-lg-6 col-sm-12 col-xs-12">
+                                                <div className="checkout-details theme-form  section-big-mt-space">
+                                                    <div className="order-box">
+                                                        <div className="title-box">
+                                                            <div>Product <span>Total</span></div>
+                                                        </div>
+                                                        <ul className="qty">
+                                                            <li>Pink Slim Shirt × 1 <span>$25.10</span></li>
+                                                            <li>SLim Fit Jeans × 1 <span>$555.00</span></li>
+                                                        </ul>
+                                                        <ul className="sub-total">
+                                                            <li>Subtotal <span className="count">$380.10</span></li>
+                                                            <li>Shipping
+                                                                <div className="shipping">
+                                                                    <div className="shopping-option">
+                                                                        <input type="checkbox" name="free-shipping"
+                                                                               id="free-shipping"/>
+                                                                            <label htmlFor="free-shipping">Free
+                                                                                Shipping</label>
+                                                                    </div>
+                                                                    <div className="shopping-option">
+                                                                        <input type="checkbox" name="local-pickup"
+                                                                               id="local-pickup"/>
+                                                                            <label htmlFor="local-pickup">Local
+                                                                                Pickup</label>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <ul className="total">
+                                                            <li>Total <span className="count">$620.00</span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className="payment-box">
+                                                        <div className="upper-box">
+                                                            <div className="payment-options">
+                                                                <ul>
+                                                                    <li>
+                                                                        <div className="radio-option">
+                                                                            <input type="radio" name="payment-group"
+                                                                                   id="payment-1" checked="checked"/>
+                                                                                <label htmlFor="payment-1">Check
+                                                                                    Payments<span
+                                                                                        className="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div className="radio-option">
+                                                                            <input type="radio" name="payment-group"
+                                                                                   id="payment-2"/>
+                                                                                <label htmlFor="payment-2">Cash On
+                                                                                    Delivery<span
+                                                                                        className="small-text">Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</span></label>
+                                                                        </div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <div className="radio-option paypal">
+                                                                            <input type="radio" name="payment-group"
+                                                                                   id="payment-3"/>
+                                                                                <label
+                                                                                    htmlFor="payment-3">PayPal</label>
+                                                                        </div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                        <div className="row cart-buttons">
+                                                            <div className="col-12">
+                                                                <a className="btn btn-normal ms-3">Place Order</a>
+                                                                <a onClick={this.backToHome} className="btn btn-normal ms-3">Back</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div id="myAccount" className="add_to_cart right account-bar">
+                    <a href="javascript:void(0)" className="overlay" onClick="closeAccount()"></a>
                     <div className="cart-inner">
                         <div className="cart_top">
-                            <h3>my cart1</h3>
+                            <h3>my account</h3>
                             <div className="close-cart">
-                                <a href="javascript:void(0)" onClick={this.closeCart}>
+                                <a href="javascript:void(0)" onClick="closeAccount()">
+                                    <i className="fa fa-times" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <form className="theme-form">
+                            <div className="form-group">
+                                <label htmlFor="email">Email</label>
+                                <input type="text" className="form-control" id="email" placeholder="Email" required=""/>
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="review">Password</label>
+                                <input type="password" className="form-control" id="review"
+                                       placeholder="Enter your password" required=""/>
+                            </div>
+                            <div className="form-group">
+                                <a href="javascript:void(0)" className="btn btn-solid btn-md btn-block ">Login</a>
+                            </div>
+                            <div className="accout-fwd">
+                                <a href="html/forget-pwd.html" className="d-block"><h5>forget password?</h5></a>
+                                <a href="html/register.html" className="d-block"><h6>you have no account ?<span>signup now</span>
+                                </h6></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="wishlist_side" className="add_to_cart right ">
+                    <a className="overlay" onClick={this.closeAccount}></a>
+                    <div className="cart-inner">
+                        <div className="cart_top">
+                            <h3>my wishlist</h3>
+                            <div className="close-cart">
+                                <a onClick={this.closeAccount}>
                                     <i className="fa fa-times" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -4708,12 +5115,12 @@ class Home extends Component {
                             <ul className="cart_product">
                                 <li>
                                     <div className="media">
-                                        <a href="html/product-page(left-sidebar).html">
+                                        <a href="product-page(left-sidebar).html">
                                             <img alt="megastore1" className="me-3"
-                                                 src="assets/images/layout-2/product/1.jpg"/>
+                                                 src="../assets/images/layout-2/product/1.jpg"/>
                                         </a>
                                         <div className="media-body">
-                                            <a href="html/product-page(left-sidebar).html">
+                                            <a href="product-page(left-sidebar).html">
                                                 <h4>redmi not 3</h4>
                                             </a>
                                             <h6>
@@ -4743,12 +5150,12 @@ class Home extends Component {
                                 </li>
                                 <li>
                                     <div className="media">
-                                        <a href="html/product-page(left-sidebar).html">
+                                        <a href="product-page(left-sidebar).html">
                                             <img alt="megastore1" className="me-3"
-                                                 src="assets/images/layout-2/product/2.jpg"/>
+                                                 src="../assets/images/layout-2/product/2.jpg"/>
                                         </a>
                                         <div className="media-body">
-                                            <a href="html/product-page(left-sidebar).html">
+                                            <a href="product-page(left-sidebar).html">
                                                 <h4>Double Door Refrigerator</h4>
                                             </a>
                                             <h6>
@@ -4778,12 +5185,12 @@ class Home extends Component {
                                 </li>
                                 <li>
                                     <div className="media">
-                                        <a href="html/product-page(left-sidebar).html">
+                                        <a href="product-page(left-sidebar).html">
                                             <img alt="megastore1" className="me-3"
-                                                 src="assets/images/layout-2/product/3.jpg"/>
+                                                 src="../assets/images/layout-2/product/3.jpg"/>
                                         </a>
                                         <div className="media-body">
-                                            <a href="html/product-page(left-sidebar).html">
+                                            <a href="product-page(left-sidebar).html">
                                                 <h4>woman hande bag</h4>
                                             </a>
                                             <h6>
@@ -4829,122 +5236,159 @@ class Home extends Component {
                                 </li>
                                 <li>
                                     <div className="buttons">
-                                        <a onClick={this.viewCart} className="btn btn-solid btn-sm">view cart</a>
-                                        <a onClick={this.checkout} className="btn btn-solid btn-sm ">checkout</a>
+                                        <a onClick={this.loadDetailWishList} className="btn btn-solid btn-block btn-md">view
+                                            wislist</a>
                                     </div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
-                {/*<section className="testimonial testimonial-inverse">*/}
-                {/*    <div className="container">*/}
-                {/*        <div className="row">*/}
-                {/*            <div className="col-md-12">*/}
-                {/*                <div className="slide-1 no-arrow">*/}
-                {/*                    <div>*/}
-                {/*                        <div className="testimonial-contain">*/}
-                {/*                            <div className="media">*/}
-                {/*                                <div className="testimonial-img">*/}
-                {/*                                    <img src="assets/images/testimonial/1.jpg"*/}
-                {/*                                         className="img-fluid rounded-circle  "*/}
-                {/*                                         alt="testimonial"/>*/}
-                {/*                                </div>*/}
-                {/*                                <div className="media-body">*/}
-                {/*                                    <h5>mark jecno</h5>*/}
-                {/*                                    <p>Contrary to popular belief, Lorem Ipsum is not simply random*/}
-                {/*                                        text. It has roots*/}
-                {/*                                        in a piece of classical Latin literature from 45 BC, making it*/}
-                {/*                                        over 2000 years*/}
-                {/*                                        old. Richard McClintock, a Latin professor at Hampden-Sydney*/}
-                {/*                                        College in*/}
-                {/*                                        Virginia.</p>*/}
-                {/*                                </div>*/}
-                {/*                            </div>*/}
-                {/*                        </div>*/}
-                {/*                    </div>*/}
-                {/*                    /!*<div>*!/*/}
-                {/*                    /!*    <div className="testimonial-contain">*!/*/}
-                {/*                    /!*        <div className="media">*!/*/}
-                {/*                    /!*            <div className="testimonial-img">*!/*/}
-                {/*                    /!*                <img src="assets/images/testimonial/2.jpg"*!/*/}
-                {/*                    /!*                     className="img-fluid rounded-circle  "*!/*/}
-                {/*                    /!*                     alt="testimonial"/>*!/*/}
-                {/*                    /!*            </div>*!/*/}
-                {/*                    /!*            <div className="media-body">*!/*/}
-                {/*                    /!*                <h5>mark jecno</h5>*!/*/}
-                {/*                    /!*                <p>Contrary to popular belief, Lorem Ipsum is not simply random*!/*/}
-                {/*                    /!*                    text. It has roots*!/*/}
-                {/*                    /!*                    in a piece of classical Latin literature from 45 BC, making it*!/*/}
-                {/*                    /!*                    over 2000 years*!/*/}
-                {/*                    /!*                    old. Richard McClintock, a Latin professor at Hampden-Sydney*!/*/}
-                {/*                    /!*                    College in*!/*/}
-                {/*                    /!*                    Virginia.</p>*!/*/}
-                {/*                    /!*            </div>*!/*/}
-                {/*                    /!*        </div>*!/*/}
-                {/*                    /!*    </div>*!/*/}
-                {/*                    /!*</div>*!/*/}
-                {/*                    /!*<div>*!/*/}
-                {/*                    /!*    <div className="testimonial-contain">*!/*/}
-                {/*                    /!*        <div className="media">*!/*/}
-                {/*                    /!*            <div className="testimonial-img">*!/*/}
-                {/*                    /!*                <img src="assets/images/testimonial/3.jpg"*!/*/}
-                {/*                    /!*                     className="img-fluid rounded-circle  "*!/*/}
-                {/*                    /!*                     alt="testimonial"/>*!/*/}
-                {/*                    /!*            </div>*!/*/}
-                {/*                    /!*            <div className="media-body">*!/*/}
-                {/*                    /!*                <h5>mark jecno</h5>*!/*/}
-                {/*                    /!*                <p>Contrary to popular belief, Lorem Ipsum is not simply random*!/*/}
-                {/*                    /!*                    text. It has roots*!/*/}
-                {/*                    /!*                    in a piece of classical Latin literature from 45 BC, making it*!/*/}
-                {/*                    /!*                    over 2000 years*!/*/}
-                {/*                    /!*                    old. Richard McClintock, a Latin professor at Hampden-Sydney*!/*/}
-                {/*                    /!*                    College in*!/*/}
-                {/*                    /!*                    Virginia.</p>*!/*/}
-                {/*                    /!*            </div>*!/*/}
-                {/*                    /!*        </div>*!/*/}
-                {/*                    /!*    </div>*!/*/}
-                {/*                    /!*</div>*!/*/}
-                {/*                </div>*/}
-                {/*            </div>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</section>*/}
-
-                <div id="myAccount" className="add_to_cart right account-bar">
-                    <a href="javascript:void(0)" className="overlay" onClick="closeAccount()"></a>
-                    <div className="cart-inner">
-                        <div className="cart_top">
-                            <h3>my account</h3>
-                            <div className="close-cart">
-                                <a href="javascript:void(0)" onClick="closeAccount()">
-                                    <i className="fa fa-times" aria-hidden="true"></i>
-                                </a>
+                <div id="wishListDetailId" className="display-none-div">
+                    <div className="breadcrumb-main ">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col">
+                                    <div className="breadcrumb-contain">
+                                        <div>
+                                            <h2>wishlist</h2>
+                                            <ul>
+                                                <li><a href="index.html">home</a></li>
+                                                <li><i className="fa fa-angle-double-right"></i></li>
+                                                <li><a href="javascript:void(0)">wishlist</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <form className="theme-form">
-                            <div className="form-group">
-                                <label htmlFor="email">Email</label>
-                                <input type="text" className="form-control" id="email" placeholder="Email" required=""/>
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="review">Password</label>
-                                <input type="password" className="form-control" id="review"
-                                       placeholder="Enter your password" required=""/>
-                            </div>
-                            <div className="form-group">
-                                <a href="javascript:void(0)" className="btn btn-solid btn-md btn-block ">Login</a>
-                            </div>
-                            <div className="accout-fwd">
-                                <a href="html/forget-pwd.html" className="d-block"><h5>forget password?</h5></a>
-                                <a href="html/register.html" className="d-block"><h6>you have no account ?<span>signup now</span>
-                                </h6></a>
-                            </div>
-                        </form>
                     </div>
+                    <section className="wishlist-section section-big-py-space b-g-light">
+                        <div className="custom-container">
+                            <div className="row">
+                                <div className="col-sm-12">
+                                    <table className="table cart-table table-responsive-xs">
+                                        <thead>
+                                        <tr className="table-head">
+                                            <th scope="col">image</th>
+                                            <th scope="col">product name</th>
+                                            <th scope="col">price</th>
+                                            <th scope="col">availability</th>
+                                            <th scope="col">action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="javascript:void(0)"><img
+                                                    src="../assets/images/layout-2/product/1.jpg" alt="product"
+                                                    className="img-fluid  "/></a>
+                                            </td>
+                                            <td><a href="javascript:void(0)">cotton shirt</a>
+                                                <div className="mobile-cart-content">
+                                                    <div className="col-xs-3">
+                                                        <p>in stock</p>
+                                                    </div>
+                                                    <div className="col-xs-3">
+                                                        <h2 className="td-color">$63.00</h2></div>
+                                                    <div className="col-xs-3">
+                                                        <h2 className="td-color"><a href="javascript:void(0)"
+                                                                                    className="icon me-1"><i
+                                                            className="ti-close"></i> </a><a href="javascript:void(0)"
+                                                                                             className="cart"><i
+                                                            className="ti-shopping-cart"></i></a></h2></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h2>$63.00</h2></td>
+                                            <td>
+                                                <p>in stock</p>
+                                            </td>
+                                            <td><a href="javascript:void(0)" className="icon me-3"><i
+                                                className="ti-close"></i> </a><a href="javascript:void(0)"
+                                                                                 className="cart"><i
+                                                className="ti-shopping-cart"></i></a></td>
+                                        </tr>
+                                        </tbody>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="javascript:void(0)"><img
+                                                    src="../assets/images/layout-2/product/2.jpg" alt="product"
+                                                    className="img-fluid  "/></a>
+                                            </td>
+                                            <td><a href="javascript:void(0)">cotton shirt</a>
+                                                <div className="mobile-cart-content">
+                                                    <div className="col-xs-3">
+                                                        <p>in stock</p>
+                                                    </div>
+                                                    <div className="col-xs-3">
+                                                        <h2 className="td-color">$63.00</h2></div>
+                                                    <div className="col-xs-3">
+                                                        <h2 className="td-color"><a href="javascript:void(0)"
+                                                                                    className="icon me-1"><i
+                                                            className="ti-close"></i> </a><a href="javascript:void(0)"
+                                                                                             className="cart"><i
+                                                            className="ti-shopping-cart"></i></a></h2></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h2>$63.00</h2></td>
+                                            <td>
+                                                <p>in stock</p>
+                                            </td>
+                                            <td><a href="javascript:void(0)" className="icon me-3"><i
+                                                className="ti-close"></i> </a><a href="javascript:void(0)"
+                                                                                 className="cart"><i
+                                                className="ti-shopping-cart"></i></a></td>
+                                        </tr>
+                                        </tbody>
+                                        <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="javascript:void(0)"><img
+                                                    src="../assets/images/layout-1/product/3.jpg" alt="product"
+                                                    className="img-fluid  "/></a>
+                                            </td>
+                                            <td><a href="javascript:void(0)">cotton shirt</a>
+                                                <div className="mobile-cart-content">
+                                                    <div className="col-xs-3">
+                                                        <p>in stock</p>
+                                                    </div>
+                                                    <div className="col-xs-3">
+                                                        <h2 className="td-color">$63.00</h2></div>
+                                                    <div className="col-xs-3">
+                                                        <h2 className="td-color"><a href="javascript:void(0)"
+                                                                                    className="icon me-1"><i
+                                                            className="ti-close"></i> </a><a href="javascript:void(0)"
+                                                                                             className="cart"><i
+                                                            className="ti-shopping-cart"></i></a></h2></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h2>$63.00</h2></td>
+                                            <td>
+                                                <p>in stock</p>
+                                            </td>
+                                            <td><a href="javascript:void(0)" className="icon me-3"><i
+                                                className="ti-close"></i> </a><a href="javascript:void(0)"
+                                                                                 className="cart"><i
+                                                className="ti-shopping-cart"></i></a></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div className="row wishlist-buttons">
+                                <div className="col-12">
+                                    <a className="btn btn-normal">continue shopping</a>
+                                    <a className="btn btn-normal">check out</a>
+                                    <a onClick={this.backToHome} className="btn btn-normal ms-3">Back</a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-
             </div>
 
         );
