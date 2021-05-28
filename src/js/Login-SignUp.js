@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
 
-class SideBar extends Component {
+class LoginSignUp extends Component {
 
     constructor(props) {
         super(props);
@@ -62,7 +62,7 @@ class SideBar extends Component {
     render() {
         return (
             <div>
-                {/*<SideBar closeAccount={this.closeAccount}></SideBar>*/}
+                {/*<LoginSignUp closeAccount={this.closeAccount}></LoginSignUp>*/}
                 <div id="myAccount" class="add_to_cart right account-bar">
                     <a href="javascript:void(0)" class="overlay" onClick={this.props.closeAccount}></a>
                     <div class="cart-inner">
@@ -161,4 +161,4 @@ class SideBar extends Component {
 
 }
 
-export default SideBar;
+export default LoginSignUp;
