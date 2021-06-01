@@ -107,12 +107,12 @@ class LoginSignUp extends Component {
                     </div>
                 </div>
                 <div id="signUp" className="add_to_cart right account-bar">
-                    <a href="javascript:void(0)" className="overlay" onClick={closeAccount}></a>
+                    <a href="javascript:void(0)" className="overlay" onClick={this.closeAccount}></a>
                     <div className="cart-inner">
                         <div className="cart_top">
                             <h3>sign up</h3>
                             <div className="close-cart">
-                                <a href="javascript:void(0)" onClick={closeAccount}>
+                                <a href="javascript:void(0)" onClick={this.closeAccount}>
                                     <i className="fa fa-times" aria-hidden="true"></i>
                                 </a>
                             </div>
